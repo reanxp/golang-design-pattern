@@ -43,5 +43,19 @@ func NewReader(name string) *Reader {
 }
 
 func (r *Reader) Update(s *Subject) {
-	fmt.Printf("%s receive %s\n", r.name, s.context)
+	fmt.Printf("%s reader receive %s\n", r.name, s.context)
+}
+
+type Write struct {
+	name string
+}
+
+func NewWrite(name string) *Write {
+	return &Write{
+		name: name,
+	}
+}
+
+func (r *Write) Update(s *Subject) {
+	fmt.Printf("%s write receive %s\n", r.name, s.context)
 }
